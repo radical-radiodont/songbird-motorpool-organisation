@@ -13,6 +13,8 @@ network analysis) is based on a tutorial from CalTech (Andreev 2023),
 which can be found here:
 https://focalplane.biologists.com/2023/10/27/analyzing-calcium-imaging-data-using-python/
 
+This script is set up to run data that is not publicly available and
+is for viewing purposes only
 """
 
 # %%% PACKAGES
@@ -33,6 +35,8 @@ from scipy import spatial as spt
 specimen = 'gw65' # choose from gw65, gw64, gw55, and gw55_R1 (the active half)
 
 # specimen GW65 is annotated
+# this process is very similar to the network analysis script 
+# except it takes multiple electrodes at a time
 if specimen == 'gw65':
     #### gw65
     x1 = 195 # x coordinate for edge of overlap for 65r2
@@ -119,7 +123,7 @@ if specimen == 'gw65':
     dff_green = nmp.zeros_like(dff_purple)
     nt_green, ny, nx = nmp.shape(dff_green[:,:,:]) 
 
-    ## muscle stimulation
+    ## field-stimulation
     trig1 = 36-10 # the time point where the stimulation paradigm begins
     trig2 = 57-10
     
@@ -190,7 +194,7 @@ if specimen == 'gw65':
 
 elif specimen == 'gw64': 
     #### gw64
-    # for more detailed annotation see GW64
+    # for more detailed annotation see specimen GW65
     x1 = 198
     x2 = 40
     
@@ -579,6 +583,7 @@ elif specimen == '7391':
    
     ## known MUs
     mu_1 = [14,121]
+    mu_2 = [19,79,109]
     mu_3 = [64,92,97,98,106,110,179,187]
     mu_4 = [119,112,117,13,128,190]
     mu_5 = [16,17,198]
@@ -595,10 +600,9 @@ elif specimen == '7391':
     mu_16 = [73,74]
     mu_17 = [53,63,77]
     mu_18 = [11,188]
-    mu_19 = [109,79,19]
    
-    mu = [mu_1,mu_2,mu_3,mu_4,mu_5,mu_6,mu_7,mu_8,mu_9,mu_10,mu_11,mu_12,mu_13,mu_14,mu_15,mu_16,mu_17,mu_18,mu_19]
-    mu_list = mu_1+mu_2+mu_3+mu_4+mu_5+mu_6+mu_7+mu_8+mu_9+mu_10+mu_11+mu_12+mu_13+mu_14+mu_15+mu_16+mu_17+mu_18+mu_19
+    mu = [mu_1,mu_2,mu_3,mu_4,mu_5,mu_6,mu_7,mu_8,mu_9,mu_10,mu_11,mu_12,mu_13,mu_14,mu_15,mu_16,mu_17,mu_18]
+    mu_list = mu_1+mu_2+mu_3+mu_4+mu_5+mu_6+mu_7+mu_8+mu_9+mu_10+mu_11+mu_12+mu_13+mu_14+mu_15+mu_16+mu_17+mu_18
 
 else:
     print('Invalid specimen identifier')
@@ -792,8 +796,10 @@ for jj in range(len(electrodes)):
     activity_electrode = activity_electrodes[jj]
     
     dff = nmp.zeros_like(electrode)
+    # defining the baseline fluorescence
     F0 = nmp.mean(electrode[:,:,:], axis = (0))
     
+    # dF/F = (F_t-F0)/F0
     for ii in range(nt[jj]):
         dff[ii,:,:] = nmp.array((electrode[ii,:,:]-F0)/F0)
     
