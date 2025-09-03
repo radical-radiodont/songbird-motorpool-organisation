@@ -1,7 +1,12 @@
 # muscle fibres in motion
 https://github.com/user-attachments/assets/9b730ac2-9f13-4cc7-bd71-3983aad6a8a7
+https://github.com/user-attachments/assets/e1f51ec5-40fd-4881-8878-115ac33fe1e3
 
-This clip shows a Ca2-imaging scan of the MDS muscle of the syrinx being actively stimulated _ex vivo_ as described in Adam _et al._ 2021 (https://doi.org/10.1016/j.cub.2021.05.008). The muscle is subjected to stimulation pulses through an array of electrodes connected to the nerve innervating it. Over time, the pulses increase in strength, recruiting gradually more and larger motor units. As fibres contract and fill with calcium, they light up, which is what is seen here.
+These clips show a Ca2-imaging scan of the MDS muscle of the syrinx being actively stimulated _ex vivo_ as described in Adam _et al._ 2021 (https://doi.org/10.1016/j.cub.2021.05.008). The muscle is subjected to stimulation pulses through an array of electrodes connected to the nerve innervating it. Over time, the pulses increase in strength, recruiting gradually more and larger motor units. As fibres contract and fill with calcium, they light up, which is what is seen here.
+
+
+
+
 
 
 # songbird-motorpool-organisation
