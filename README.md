@@ -1,4 +1,11 @@
+# muscle fibres in motion
+https://github.com/user-attachments/assets/9b730ac2-9f13-4cc7-bd71-3983aad6a8a7
+
+This clip shows a Ca2-imaging scan of the MDS muscle of the syrinx being actively stimulated _ex vivo_ as described in Adam _et al._ 2021. The muscle is subjected to stimulation pulses through an array of electrodes connected to the nerve innervating it. The pulses increase in strength over time, recruiting larger and larger motor units. As fibres contract and fill with calcium, they light up, as seen here.
+
+
 # songbird-motorpool-organisation
+
 Contains the scripts used during my MSc thesis project on the organisation of the motor pool in birdsong motor control.
 
 4 different scripts are included, with some overlap. Note that 2 of them requires data that is not publicly available and thus cannot be run but are for viewing purpose only.
